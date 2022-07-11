@@ -1,0 +1,15 @@
+@use '../abstracts/' as *;
+
+.title {
+    font-family: 'RF Dewi Expanded';
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    @media (min-width: map-get($container-max-widths, md)) {
+        font-size: 38px;
+    } 
+    @media (min-width: map-get($container-max-widths, lg)) {
+        font-size: 45px;
+    } 
+}

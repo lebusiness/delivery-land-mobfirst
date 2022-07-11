@@ -1,0 +1,51 @@
+@use '../abstracts/' as *;
+
+.contact {
+    background-image: url("./../imgs/contact/bg.jpg");
+    background-size: cover;
+    &__inner {
+        padding: $section-padding-sm 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        @media (min-width: map-get($container-max-widths, md)) {
+            grid-template-columns: 1.7fr 1.3fr 0.3fr;
+        }
+    }
+    &__title {
+        text-align: left;
+    }
+    &__subtitle {
+        color: white;
+        opacity: 0.4;
+        font-weight: 600;
+        font-size: $font-size-sm;
+        font-family: 'RF Dewi Expanded';
+        align-self: center;
+    }
+    &__logo {
+        display: none;
+        justify-self: right;
+        @media (min-width: map-get($container-max-widths, md)) {
+            display: inline-block;
+        }
+    }
+    &__number:nth-child(2n) {
+        margin-top: 40px;
+        @media (min-width: map-get($container-max-widths, md)) {
+            margin-top: 0;
+        }
+    }
+    &__number, &__tg {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        font-family: 'RF Dewi Expanded';
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            color: rgba(255, 230, 0, 0.553);
+        }
+    }
+}

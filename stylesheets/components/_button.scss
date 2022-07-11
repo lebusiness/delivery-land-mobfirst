@@ -1,0 +1,11 @@
+
+@use '../abstracts/' as *;
+@use "sass:color";
+$font-weights: ("regular": 400, "medium": 500, "bold": 900);
+.btn {
+    @extend %toolbelt;
+    color: #4285f4;
+    border: 1px solid color.scale(black, $lightness: 70%);
+    font-weight: map-get($font-weights, "bold"); // 500
+    padding: 10px;
+}

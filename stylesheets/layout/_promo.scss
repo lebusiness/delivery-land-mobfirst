@@ -1,0 +1,81 @@
+@use '../abstracts/' as *;
+
+.promo {
+    background-image: linear-gradient(#1e1e1e6b, #1e1e1e6b), url("./../imgs/promo/bg.jpg");
+    background-position: -750px;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'RF Dewi Expanded';
+    @media (min-width: map-get($container-max-widths, lg)) {
+        background-position: 0;
+        background-repeat: no-repeat;
+    } 
+    &__container {
+        height: inherit;
+    }
+    &__inner {
+        @include flex(column, center, center);
+        height: inherit;
+    }
+    &__title {
+        text-align: center;
+        font-size: 25px;
+        color: white;
+        margin-top: 10vh;
+        font-weight: 600;
+        @media (min-width: map-get($container-max-widths, md)) {
+            font-size: 35px;
+        } 
+        @media (min-width: map-get($container-max-widths, lg)) {
+            font-size: 45px;
+        } 
+        &-under {
+            display: inline;
+            @media (min-width: map-get($container-max-widths, md)) {
+                display: block;
+            } 
+        }
+    }
+    &__btn {
+        display: inline-block;
+        text-decoration: none;
+        background: white;
+        color: black;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1;
+        padding: 15px 15px 17px 15px;
+        margin-top: 37px;
+        @media (min-width: map-get($container-max-widths, md)) {
+            font-size: 15px;
+            padding: 15px 15px 17px 15px;
+        } 
+        @media (min-width: map-get($container-max-widths, lg)) {
+            font-size: 18px;
+            padding: 19px 31px 23px 31px;
+        } 
+        transition: 0.3s;
+        &:hover {
+            background: rgb(216, 216, 216);
+        }
+    }
+    &__more {
+        display: none;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        @media (min-width: map-get($container-max-widths, md)) {
+            display: inline;
+            font-size: 15px;
+            margin-left: 30px;
+        } 
+        @media (min-width: map-get($container-max-widths, lg)) {
+            font-size: 18px;
+            margin-left: 55px;
+        } 
+        transition: 0.3s;
+        &:hover {
+            color: rgba(255, 230, 0, 0.553);
+        }
+    }
+}

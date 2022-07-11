@@ -1,0 +1,82 @@
+@use '../abstracts/' as *;
+
+.advantage {
+    background-image: url("./../imgs/advantage/bg-small.png");
+    background-size: cover;
+    @media (min-width: map-get($container-max-widths, md)) {
+        background-image: url("./../imgs/advantage/bg.png");
+    } 
+    
+    &__inner {
+        padding: $section-padding-sm 0;
+    }
+    &__content {
+        margin-top: $content-margin-sm;
+        @include flex(row, space-between, flex-start);
+        flex-wrap: wrap;
+        @media (min-width: map-get($container-max-widths, md)) {
+            width: 85%;
+            margin: 0 auto;
+            background: rgba(17, 17, 17, 0.653);
+            backdrop-filter: blur(5px);
+            flex-direction: row;
+            margin-top: $content-margin-lg;
+            padding: 50px 14px;
+            border-radius: 40px;
+        } 
+    }
+    &__item {
+        @include flex(column, center, center);
+        width: 50%;
+        padding: 14px 0px;
+        @media (min-width: map-get($container-max-widths, md)) {
+            padding: 0 20px;
+            width: calc(100%/3);
+        }
+        @media (min-width: map-get($container-max-widths, lg)) {
+            width: calc(85%/3);
+            padding: 0 10px;
+        }
+        &:nth-child(1n) {
+            padding-right: 8px;
+            @media (min-width: map-get($container-max-widths, md)) {
+                padding-left: 0px;
+            }
+        }
+        &:nth-child(2n) {
+            padding-left: 8px;
+            @media (min-width: map-get($container-max-widths, md)) {
+                padding-left: 0px;
+                order: 3;
+                margin-top: 30px;
+            }
+            @media (min-width: map-get($container-max-widths, lg)) {
+                margin-top: 45px;
+            }
+        }
+        &-img {
+
+        }
+        &-description {
+            margin: 0;
+            text-align: center;
+            font-family: 'RF Dewi';
+            font-size: 14px;
+            color: white;
+            margin-top: -25px;
+            line-height: 1.5;
+            letter-spacing: 0.1px;
+            font-weight: 400;
+            @media (min-width: map-get($container-max-widths, md)) {
+                margin-top: -15px;
+                font-size: 15px;
+            } 
+            @media (min-width: map-get($container-max-widths, lg)) {
+                font-size: 16px;
+            } 
+            span {
+                font-weight: 600;
+            }
+        }
+    }
+}

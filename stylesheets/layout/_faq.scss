@@ -1,0 +1,138 @@
+@use '../abstracts/' as *;
+
+.faq {
+    background-image: url("./../imgs/faq/bg.png");
+    background-size: 160%;
+    &__container {
+        max-width: 100%;
+        @media (min-width: map-get($container-max-widths, md)) {
+            max-width: 720px;
+        }
+        @media (min-width: map-get($container-max-widths, lg)) {
+            max-width: 960px;
+        }
+        @media (min-width: map-get($container-max-widths, xl)) {
+            max-width: 1200px;
+        }
+        @media (min-width: map-get($container-max-widths, xxl)) {
+            max-width: 1320px;
+        }
+    }
+    &__inner {
+        padding: $section-padding-sm 0;
+    }
+    &__content {
+        font-family: 'RF Dewi Expanded';
+        margin-top: $content-margin-sm;
+        @media (min-width: map-get($container-max-widths, md)) {
+            margin-top: $content-margin-lg;
+        }
+    }
+    &__wrapper {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(2.5px);
+        padding: 23px 35px;
+        @media (min-width: map-get($container-max-widths, md)) {
+            padding: 34px 55px;
+        }
+        
+        &:first-child {
+            border-radius: 35px 35px 0 0;
+            padding-top: 45px;
+            @media (min-width: map-get($container-max-widths, md)) {
+                border-radius: 45px 45px 0 0;
+            }
+        }
+        &:last-child {
+            border-radius: 0 0 35px 35px;
+            padding-bottom: 45px;
+            @media (min-width: map-get($container-max-widths, md)) {
+                border-radius: 0 0 45px 45px;
+            }
+        }
+    }
+    &__question {
+        font-weight: 600;
+        color: white;
+        font-size: $font-size-md;
+        @media (min-width: map-get($container-max-widths, md)) {
+            font-size: 23px;
+        }
+        @media (min-width: map-get($container-max-widths, lg)) {
+            font-size: $font-size-lg;
+        }
+    }
+    &__answer {
+        font-weight: 500;
+        line-height: 1.2;
+        color: white;
+        font-size: $font-size-sm;
+        margin: 20px 0 0 -9.5px;
+        padding-bottom: 10px;
+        @media (min-width: map-get($container-max-widths, md)) {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        @media (min-width: map-get($container-max-widths, lg)) {
+            font-size: $font-size-md;
+        }
+    }
+}
+
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;} 
+summary {
+   padding: 0 35px 0 0;
+   display:inline-block;
+   font-size:1.4em;
+   cursor: pointer;
+   position: relative;
+}
+
+details[open] > summary:after {
+  transform: rotate(90deg);
+}
+
+details[open] summary ~ *{ 
+  animation: sweep .3s ease;
+  animation-fill-mode: both;
+}
+@keyframes sweep {
+  0%    {opacity: 0;transform: translate(0px, -10px);}
+  100%  {opacity: 1;transform: translate(10px, 0px)}
+}
+details > summary {
+    list-style: none;
+    cursor: pointer;
+}
+  summary {
+     display:block;
+     cursor: pointer;
+     position: relative;
+  }
+  :focus {
+    outline: 0;
+  }
+  summary:after {  
+    content: "";
+    top: 20%;
+    right: 0;
+    background-image: url("../../imgs/faq/arrow.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;  
+    position: absolute;
+    transition: transform .3s;
+
+  }
+  details[open] {
+    background: linear-gradient(0deg, rgba(233, 188, 71, 0.02), rgba(233, 188, 71, 0.02)), linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.18);
+  }
+  details[open] > summary {
+    color: #E9BC47;
+  }
+  details[open] > summary:after {
+    background-image: url("../../imgs/faq/arrow-active.svg");
+  }
